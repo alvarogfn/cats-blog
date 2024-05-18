@@ -1,0 +1,25 @@
+div {
+  width: inherit;
+  max-width: inherit;
+  min-width: inherit;
+  height: inherit;
+  max-height: inherit;
+  min-height: inherit;
+
+  text-align: inherit;
+  text-decoration: inherit;
+
+  margin: inherit;
+  padding: 20px;
+
+  background-color: lighten($color: #1d1e26, $amount: 10%);
+  box-shadow: 1px 1px 2px darken($color: #1d1e26, $amount: 2.5%);
+
+  transition: filter 200ms;
+
+  &:hover,
+  &:active,
+  &:focus {
+    filter: brightness(110%);
+  }
+}

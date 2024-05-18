@@ -1,0 +1,4 @@
+@mixin bordered-box($color) {
+  border: 1px solid darken($color: $color, $amount: 5%);
+  background-color: $color;
+}

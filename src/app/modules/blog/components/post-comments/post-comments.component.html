@@ -1,0 +1,18 @@
+<section class="comments">
+  <ng-container *ngIf="!error; else elseTemplate">
+    <ul class="comments__list">
+      <li
+        class="comments__item"
+        *ngFor="let comment of comments; let index = index"
+        [@drop]="{ value: '', params: { delay: (index + 1) * 100 } }"
+      >
+        <app-card class="comments__card">
+          <app-comment [comment]="comment"></app-comment>
+        </app-card>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-error class="comments__error"></app-error>
+  </ng-template>
+</section>

@@ -1,0 +1,38 @@
+@use "../../../../../app/scss/mixins.scss" as *;
+
+label {
+  font-family: "Patrick Hand", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  color: #a36cd9;
+
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 5px;
+}
+
+input {
+  font-family: "Finlandica", sans-serif;
+
+  border-radius: 2.5px;
+
+  @include bordered-box(darken($color: #333543, $amount: 2.5%));
+
+  color: white;
+
+  font-size: 1.15rem;
+  font-weight: 400;
+
+  padding: 7.5px;
+
+  transition: 200ms;
+
+  &::placeholder {
+    opacity: 0.2;
+  }
+
+  &:focus {
+    border: 1px solid #a36cd9;
+  }
+}

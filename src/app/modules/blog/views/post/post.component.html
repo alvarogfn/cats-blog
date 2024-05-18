@@ -1,0 +1,16 @@
+<section class="post">
+  <ng-container *ngIf="!error; else elseTemplate">
+    <ng-container *ngIf="post; else elseTemplate">
+      <section class="post__content">
+        <app-post-card [post]="post"></app-post-card>
+        <app-post-comments [postId]="post.id"></app-post-comments>
+      </section>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <app-loading class="post__loading"></app-loading>
+    </ng-template>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-error></app-error>
+  </ng-template>
+</section>

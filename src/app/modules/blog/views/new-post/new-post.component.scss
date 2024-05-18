@@ -1,0 +1,83 @@
+@use "../../../../scss/animations.scss" as *;
+
+.post {
+  &__card {
+    padding: 20px;
+    max-width: 780px;
+
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: "Patrick Hand", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+
+    color: rgb(228, 206, 242);
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+  }
+
+  &__submit {
+    font-family: "Finlandica", sans-serif;
+    font-weight: 900;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 1px;
+
+    padding: 10px;
+
+    max-width: 200px;
+
+    align-self: flex-end;
+
+    color: #ffff;
+
+    background: #049dbf;
+
+    background: linear-gradient(
+      90deg,
+      #049dbf 0%,
+      #a36cd9 30%,
+      #a36cd9 70%,
+      #049dbf 100%
+    );
+
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%);
+
+    transition: 200ms;
+
+    &:hover {
+      filter: brightness(90%);
+      clip-path: polygon(4% 0, 100% 0%, 98% 100%, 0% 100%);
+
+      animation: gradient-animation 2s ease-in-out alternate infinite;
+    }
+
+    &:disabled {
+      filter: grayscale(100%);
+    }
+  }
+
+  &__loading {
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    width: fit-content;
+    height: 100%;
+  }
+
+  &__status {
+    text-transform: uppercase;
+    &--error {
+      color: red;
+    }
+  }
+}

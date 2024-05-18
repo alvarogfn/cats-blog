@@ -1,0 +1,74 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-items: center;
+}
+
+form {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+
+  position: relative;
+}
+
+h2 {
+  font-family: "Finlandica", sans-serif;
+  color: #049dbf;
+  font-weight: 500;
+}
+
+span {
+  font-weight: 900;
+  color: white;
+}
+
+button {
+  font-family: "Patrick Hand", sans-serif;
+  color: #ffffff;
+
+  background-color: #03a65a;
+
+  transition: filter 200ms;
+
+  &[type="submit"] {
+    width: 120px;
+
+    align-self: flex-end;
+
+    padding: 7.5px;
+  }
+
+  &[type="reset"] {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+
+    border-radius: 50%;
+
+    text-indent: -2222222px;
+
+    background-image: url("../../../../../assets/close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px;
+
+    width: 35px;
+    height: 35px;
+  }
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:disabled {
+    filter: grayscale(100%);
+  }
+}
+
+p {
+  color: red;
+}

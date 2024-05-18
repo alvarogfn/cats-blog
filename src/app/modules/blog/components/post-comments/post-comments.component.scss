@@ -1,0 +1,19 @@
+.comments {
+  &__list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+  }
+  &__item {
+    &:nth-child(1n) {
+      color: #a36cd9;
+    }
+
+    &:nth-child(2n) {
+      color: #049dbf;
+    }
+    &:nth-child(3n) {
+      color: #03a65a;
+    }
+  }
+}

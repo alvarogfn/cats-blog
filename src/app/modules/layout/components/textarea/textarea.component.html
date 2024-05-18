@@ -1,0 +1,12 @@
+<label for="">
+  {{ label }}
+  <textarea
+    #textarea
+    type="text"
+    [name]="label"
+    [id]="label"
+    [placeholder]="placeholder"
+    [style]="{ height: textareaHeight + 'px' }"
+    [formControlName]="controlName"
+  ></textarea>
+</label>

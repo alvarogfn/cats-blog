@@ -1,0 +1,45 @@
+.paginator {
+  font-family: "Finlandica", sans-serif;
+  font-weight: bold;
+
+  padding: 20px 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &__button {
+    flex-basis: 25%;
+
+    width: 130px;
+    color: white;
+
+    padding: 10px;
+
+    transition: 200ms;
+
+    &:hover,
+    &:active {
+      filter: brightness(90%);
+    }
+
+    &:disabled {
+      filter: grayscale(100%);
+    }
+
+    &--previous {
+      background-color: #a36cd9;
+    }
+    &--next {
+      background-color: #049dbf;
+    }
+  }
+
+  &__index {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+  }
+}

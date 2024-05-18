@@ -1,0 +1,30 @@
+<section class="editor" [@pop]>
+  <app-card class="editor__card">
+    <h2 class="editor__title">Edit the post!</h2>
+    <p class="editor__id">{{ id }}</p>
+
+    <ng-container *ngIf="!loading; else elseTemplate">
+      <form class="editor__form" [formGroup]="post" (ngSubmit)="submit()">
+        <app-input label="Change The Title" controlName="title"></app-input>
+        <app-textarea label="Change The Content" controlName="content">
+        </app-textarea>
+        <button class="editor__submit" type="submit" [disabled]="loading">
+          Change it!
+        </button>
+      </form>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <app-loading
+        phrase="Loading post {{ id }}..."
+        class="editor__loading"
+      ></app-loading>
+    </ng-template>
+    <p class="editor__status editor__status--error" *ngIf="error">
+      Cat-tastrophic, something went wrong :(
+    </p>
+
+    <p class="editor__status editor__status--sucess" *ngIf="success">
+      Cat-tastic, success! redirecting... :D
+    </p>
+  </app-card>
+</section>

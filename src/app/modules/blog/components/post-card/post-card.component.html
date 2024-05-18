@@ -1,0 +1,31 @@
+<section
+  class="post"
+  *ngIf="post"
+  [@push]="{ value: '', params: { delay: (index! + 1) * 100 } }"
+>
+  <app-card class="posts__card">
+    <a class="post__link" [routerLink]="['/post', post.id]">
+      <img class="post__img" src="https://i.imgur.com/Jvh1OQm.jpeg" alt="" />
+      <h2 class="post__title">{{ post.title }}</h2>
+      <p class="post__index" *ngIf="index !== null">{{ index + 1 }}</p>
+      <p class="post__body">{{ post.body | substring: 200 }}</p>
+    </a>
+    <button
+      type="button"
+      (click)="comment()"
+      *ngIf="!commentOpen"
+      class="post__button post__button--comment"
+    >
+      Comment
+    </button>
+    <a
+      class="post__button post__button--edit"
+      [routerLink]="['/editor', post.id]"
+    >
+      <img src="../../../../../assets/purple-pencil.svg" alt="Edit" />
+    </a>
+  </app-card>
+  <app-card *ngIf="commentOpen" class="post__card post__card--comment" [@drop]>
+    <app-do-comment [post]="post" (toClose)="close()"></app-do-comment>
+  </app-card>
+</section>

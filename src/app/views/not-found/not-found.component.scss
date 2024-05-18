@@ -1,0 +1,19 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  flex-flow: column nowrap;
+}
+
+h1 {
+  font-family: "Patrick Hand", sans-serif;
+  color: #03a65a;
+}
+
+p {
+  color: red;
+  font-family: "Finlandica", sans-serif;
+  font-size: 4rem;
+}

@@ -1,0 +1,46 @@
+.comment {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+
+  position: relative;
+
+  &__id {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-family: "Finlandica", sans-serif;
+    font-weight: 900;
+    font-size: 1.75rem;
+
+    opacity: 0.5;
+
+    transform: skew(-20deg);
+
+    &::before {
+      content: "#";
+      font-size: 1.2rem;
+    }
+  }
+
+  &__email {
+    font-family: "Finlandica", sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+
+    color: white;
+
+    opacity: 0.8;
+  }
+
+  &__name {
+    font-family: "Patrick Hand", sans-serif;
+  }
+
+  &__content {
+    font-family: "Finlandica", sans-serif;
+    color: white;
+    white-space: pre-line;
+  }
+}

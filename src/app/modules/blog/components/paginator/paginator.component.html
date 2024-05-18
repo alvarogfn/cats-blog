@@ -1,0 +1,17 @@
+<section class="paginator">
+  <button
+    class="paginator__button paginator__button--previous"
+    (click)="change(PageMovement.PREVIOUS)"
+    [disabled]="disabled || page <= 1"
+  >
+    Previous
+  </button>
+  <p class="paginator__index">page {{ page }}</p>
+  <button
+    class="paginator__button paginator__button--next"
+    (click)="change(PageMovement.NEXT)"
+    [disabled]="disabled || page === lastPage"
+  >
+    Next
+  </button>
+</section>

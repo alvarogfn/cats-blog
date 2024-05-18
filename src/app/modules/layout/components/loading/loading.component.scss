@@ -1,0 +1,26 @@
+@use "../../../../scss/animations.scss" as *;
+
+div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+}
+
+p {
+  font-family: "Patrick Hand", sans-serif;
+  color: #049dbf;
+
+  font-size: 1.5rem;
+
+  text-transform: uppercase;
+}
+
+img {
+  animation: rotate 1s ease-in-out infinite;
+
+  width: 100px;
+  height: 100px;
+}

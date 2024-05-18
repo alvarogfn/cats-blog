@@ -1,0 +1,20 @@
+<section class="post" [@pop]>
+  <app-card class="post__card">
+    <h2 class="post__title">Make a new Post!</h2>
+    <ng-container *ngIf="!loading; else elseTemplate">
+      <form class="post__form" [formGroup]="post" (submit)="submit()">
+        <app-input label="Title" controlName="title"></app-input>
+        <app-textarea label="Content" controlName="content"></app-textarea>
+        <button class="post__submit" type="submit" [disabled]="!isValid">
+          Post it!
+        </button>
+      </form>
+      <p class="post__status post__status--error" *ngIf="error">
+        Cat-tastropic, something went wrong...
+      </p>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <app-loading class="post__loading" phrase="Trying post..."></app-loading>
+    </ng-template>
+  </app-card>
+</section>

@@ -1,0 +1,21 @@
+<section class="pages">
+  <app-paginator
+    class="pages__paginator"
+    [page]="actualPage"
+    [lastPage]="lastPage"
+    (changePage)="changePage($event)"
+    [disabled]="loading"
+  ></app-paginator>
+  <ng-container *ngIf="!loading; else elseTemplate">
+    <section class="pages__content" [@out]>
+      <ul class="pages__list" *ngIf="posts">
+        <li class="pages__item" *ngFor="let post of posts; let index = index">
+          <app-post-card [post]="post" [index]="index"></app-post-card>
+        </li>
+      </ul>
+    </section>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-loading class="pages__loading"></app-loading>
+  </ng-template>
+</section>

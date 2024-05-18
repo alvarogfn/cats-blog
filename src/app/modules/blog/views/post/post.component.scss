@@ -1,0 +1,29 @@
+.post {
+  display: flex;
+  flex-flow: column nowrap;
+
+  &__content {
+    overflow-y: scroll;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+
+    height: calc(100vh - 110px);
+    width: 100%;
+
+    padding: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  &__loading {
+    align-self: center;
+    justify-self: center;
+  }
+}

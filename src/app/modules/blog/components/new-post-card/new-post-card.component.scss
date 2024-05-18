@@ -1,0 +1,28 @@
+.post {
+  &__card {
+    cursor: text;
+
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  &__button {
+    cursor: text;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    font-family: "Patrick Hand", sans-serif;
+    color: #a36cd9;
+    font-size: 1.1rem;
+    opacity: 0.3;
+  }
+
+  &__icon {
+    color: white;
+  }
+}

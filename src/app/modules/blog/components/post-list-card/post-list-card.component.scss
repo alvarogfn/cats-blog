@@ -1,0 +1,22 @@
+@use "../../../../scss/colors.scss" as *;
+@use "../../../../scss/animations.scss" as *;
+
+.posts {
+  &__card {
+    margin: 5px 0;
+  }
+
+  &__text {
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 2rem;
+
+    color: $purple-2;
+    letter-spacing: 2px;
+
+    background-image: url("../../../../../assets/right-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    animation: arrow-move 1s ease-out alternate infinite;
+  }
+}

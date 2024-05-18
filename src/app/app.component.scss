@@ -1,0 +1,8 @@
+main {
+  margin: 20px auto;
+  width: calc(100vw - 30px);
+  max-width: 780px;
+
+  display: flex;
+  flex-flow: column nowrap;
+}

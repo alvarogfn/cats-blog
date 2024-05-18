@@ -1,0 +1,34 @@
+<ng-container *ngIf="!loading; else elseTemplate">
+  <form [formGroup]="comment" (ngSubmit)="submit()">
+    <h2>
+      Write your comment to <span>{{ title }}</span
+      >:
+    </h2>
+    <app-input
+      label="Your name:"
+      placeholder="Nyaderson"
+      controlName="name"
+    ></app-input>
+
+    <app-input
+      label="Your email:"
+      placeholder="nyah@cat.com"
+      controlName="email"
+      type="email"
+    ></app-input>
+
+    <app-textarea
+      label="Your comment:"
+      controlName="content"
+      placeholder="Your post is kittytastic!!!"
+    ></app-textarea>
+
+    <button type="submit" [disabled]="!isValid">Comment</button>
+    <button type="reset" (click)="close()">Close</button>
+
+    <p *ngIf="error">Cat-tastrophic, something went wrong :(</p>
+  </form>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-loading class="loading"></app-loading>
+</ng-template>

@@ -1,0 +1,87 @@
+@use "../../../../scss/animations.scss" as *;
+
+.editor {
+  position: relative;
+
+  font-family: "Patrick Hand", sans-serif;
+
+  &__card {
+    min-height: 300px;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+
+    position: relative;
+  }
+
+  &__loading {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  &__id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-size: 2rem;
+    color: #03a65a;
+
+    &::before {
+      content: "#";
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    font-size: 2rem;
+    color: #049dbf;
+
+    padding: 5px;
+  }
+
+  &__submit {
+    align-self: flex-end;
+
+    width: 175px;
+
+    padding: 10px;
+
+    color: white;
+
+    background-color: #a36cd9;
+
+    animation: color-change 1.8s linear alternate infinite;
+
+    transition: 200ms;
+    &:hover,
+    &:active {
+      animation-play-state: paused;
+      filter: invert(100%);
+    }
+
+    &:disabled {
+      cursor: wait;
+    }
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+
+    text-transform: uppercase;
+    &--error {
+      color: red;
+    }
+    &--sucess {
+      color: #03a65a;
+    }
+  }
+}
